@@ -27,12 +27,13 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(40, 40, 40, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 1rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     max-width: 480px;
     width: 100%;
 }
@@ -70,28 +71,31 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     letter-spacing: 0.015em;
+    text-shadow: 0 0 6px rgba(120, 120, 120, 0.9), 0 0 12px rgba(120, 120, 120, 0.6);
 }
 
 .music-info h2 {
     font-size: 16px;
     font-weight: 400;
-    color: #b3b3b3;
+    color: #ffffff;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     letter-spacing: 0.015em;
+    text-shadow: 0 0 6px rgba(120, 120, 120, 0.9), 0 0 12px rgba(120, 120, 120, 0.6);
 }
 
 .music-info .album {
     font-size: 14px;
     font-weight: 400;
-    color: #8e8e8e;
+    color: #ffffff;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     letter-spacing: 0.015em;
+    text-shadow: 0 0 6px rgba(120, 120, 120, 0.9), 0 0 12px rgba(120, 120, 120, 0.6);
 }
 
 .progress-container {
@@ -103,28 +107,29 @@ body {
 
 .time {
     font-size: 14px;
-    color: #b3b3b3;
+    color: #ffffff;
     margin: 0;
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.015em;
+    text-shadow: 0 0 6px rgba(120, 120, 120, 0.9), 0 0 12px rgba(120, 120, 120, 0.6);
 }
 
 .progress {
     flex: 1;
     height: 4px;
-    background: #404040;
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     overflow: hidden;
     cursor: pointer;
 }
 
 .bar {
-    background: #1db954;
+    background: #ffffff;
     height: 100%;
     border-radius: 2px;
     transition: width 0.1s linear;
 }
 
 .progress:hover .bar {
-    background: #1ed760;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
 }
