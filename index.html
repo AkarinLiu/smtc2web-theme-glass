@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Now Playing - Live</title>
+        <link rel="icon" type="image/png" href="./icon.png" />
+        <link rel="stylesheet" href="./style.css" />
+        <script type="module" src="./main.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 专辑封面 -->
+            <div class="album-art">
+                <img
+                    v-if="info.album_art"
+                    :src="info.album_art"
+                    alt="Album Art"
+                    onerror="this.src = './lib/svg/music-solid-full.svg'"
+                />
+                <img
+                    v-else
+                    src="./lib/svg/music-solid-full.svg"
+                    alt="No Album Art"
+                />
+            </div>
+
+            <!-- 音乐信息 -->
+            <div class="music-info">
+                <h1>{{ info.title || '–' }}</h1>
+                <h2>{{ info.artist || '–' }}</h2>
+                <p class="album">{{ info.album || '–' }}</p>
+
+                <!-- 进度条和时间 -->
+                <div class="progress-container">
+                    <span class="time">{{ info.position || '0:00' }}</span>
+                    <div class="progress">
+                        <div
+                            class="bar"
+                            :style="{ width: info.pct + '%' }"
+                        ></div>
+                    </div>
+                    <span class="time">{{ info.duration || '0:00' }}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
